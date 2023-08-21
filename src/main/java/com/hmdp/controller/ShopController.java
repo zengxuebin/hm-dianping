@@ -7,33 +7,31 @@ import com.hmdp.dto.Result;
 import com.hmdp.entity.Shop;
 import com.hmdp.service.IShopService;
 import com.hmdp.utils.SystemConstants;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-
 /**
- * <p>
- * 前端控制器
- * </p>
+ * 商铺前端控制器
  *
- * @author 虎哥
- * @since 2021-12-22
+ * @author ZengXuebin
+ * @since 2023/8/22 00:38
  */
 @RestController
 @RequestMapping("/shop")
 public class ShopController {
 
-    @Resource
+    @Autowired
     public IShopService shopService;
 
     /**
      * 根据id查询商铺信息
+     *
      * @param id 商铺id
      * @return 商铺详情数据
      */
     @GetMapping("/{id}")
     public Result queryShopById(@PathVariable("id") Long id) {
-        return Result.ok(shopService.getById(id));
+        return shopService.queryShopById(id);
     }
 
     /**
