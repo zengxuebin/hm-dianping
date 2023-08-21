@@ -12,7 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -34,14 +33,13 @@ public class UserController {
 
     /**
      * 发送手机验证码
-     * @param phone   手机号
-     * @param session 会话
+     * @param phone 手机号
      * @return res
      */
     @PostMapping("code")
-    public Result sendCode(@RequestParam("phone") String phone, HttpSession session) {
+    public Result sendCode(@RequestParam("phone") String phone) {
         // 发送短信验证码并保存验证码
-        return userService.sendCode(phone, session);
+        return userService.sendCode(phone);
     }
 
     /**
@@ -53,7 +51,7 @@ public class UserController {
     @PostMapping("/login")
     public Result login(@RequestBody LoginFormDTO loginForm, HttpSession session){
         // 实现登录功能
-        return userService.login(loginForm, session);
+        return userService.login(loginForm);
     }
 
     /**

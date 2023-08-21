@@ -5,8 +5,6 @@ import com.hmdp.dto.LoginFormDTO;
 import com.hmdp.dto.Result;
 import com.hmdp.entity.User;
 
-import javax.servlet.http.HttpSession;
-
 /**
  * 用户服务接口层
  *
@@ -17,17 +15,16 @@ public interface IUserService extends IService<User> {
 
     /**
      * 发送短信验证码
-     * @param phone   手机号
-     * @param session 会话
+     *
+     * @param phone 手机号
      * @return 验证码
      */
-    Result sendCode(String phone, HttpSession session);
+    Result sendCode(String phone);
 
     /**
      * 登录
      * @param loginForm 登录表单
-     * @param session   会话
      * @return res
      */
-    Result login(LoginFormDTO loginForm, HttpSession session);
+    Result login(LoginFormDTO loginForm);
 }
