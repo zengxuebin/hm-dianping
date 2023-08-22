@@ -30,14 +30,23 @@ public class RedisConstants {
      */
     public static final Long LOGIN_TOKEN_TTL = 30L * 60L * 1000L;
 
+    /**
+     * 空值有效期
+     */
     public static final Long CACHE_NULL_TTL = 2L;
 
+    /**
+     * 商铺过期时间
+     */
     public static final Long CACHE_SHOP_TTL = 30L;
 
     public static final String CACHE_SHOP_KEY = "cache:shop:";
 
     public static final String CACHE_SHOP_TYPE_KEY = "cache:shop_type";
 
+    /**
+     * 商铺锁
+     */
     public static final String LOCK_SHOP_KEY = "lock:shop:";
 
     public static final Long LOCK_SHOP_TTL = 10L;
