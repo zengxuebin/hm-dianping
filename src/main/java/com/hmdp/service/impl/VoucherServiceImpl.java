@@ -7,6 +7,7 @@ import com.hmdp.mapper.VoucherMapper;
 import com.hmdp.entity.SeckillVoucher;
 import com.hmdp.service.ISeckillVoucherService;
 import com.hmdp.service.IVoucherService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,13 +19,13 @@ import java.util.List;
  *  服务实现类
  * </p>
  *
- * @author 虎哥
+ * @author ZengXuebin
  * @since 2021-12-22
  */
 @Service
 public class VoucherServiceImpl extends ServiceImpl<VoucherMapper, Voucher> implements IVoucherService {
 
-    @Resource
+    @Autowired
     private ISeckillVoucherService seckillVoucherService;
 
     @Override
