@@ -61,6 +61,13 @@
             <artifactId>hutool-all</artifactId>
             <version>5.8.21</version>
         </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.20</version>
+            <scope>runtime</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
